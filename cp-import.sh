@@ -171,6 +171,7 @@ main() {
 	restore_psql "$psqldir"                                                    # postgresql databases, users and grants
     restore_cron                                                               # cronjob
     restore_ssl "$cpanel_username"                                             # ssl certs
+    restore_domlogs "$cpanel_username"                                         # apache access logs, kept as files
     restore_wordpress "$real_backup_files_path" "$cpanel_username"             # import wp sites to sitemanager
     restore_notifications "$real_backup_files_path" "$cpanel_username"         # notification preferences from cp
     restore_startdate "$real_backup_files_path" "$cpanel_username"             # cp account creation date
